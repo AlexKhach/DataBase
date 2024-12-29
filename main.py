@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
-from datetime import date, time
 import sqlite3
 from sqlite3 import Error
 app = FastAPI()
@@ -37,8 +36,8 @@ class SubjectResponse(Subject):
     id: int
 
 class Class(BaseModel):
-    Дата: date
-    Время: time
+    Дата: str
+    Время: str
     Аудитория: str
     Вид_занятия: str
     Группа: str
